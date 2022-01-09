@@ -1,0 +1,19 @@
+.colorsBlock{
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 60px;
+  right: 190px;
+  display: flex;
+  flex-flow: row wrap;
+  border: 2px solid rgb(84, 104, 0);
+  & div {
+    width: 33.3%;
+    height: 33.3%;
+    border: 1px solid rgb(84, 104, 0);
+    cursor: pointer;
+    &:hover {
+      border: 1px solid white;
+    }
+  }
+}

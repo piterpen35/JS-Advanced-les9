@@ -1,0 +1,54 @@
+.addBlock {
+  max-width: 100%;
+  min-height: 250px;
+  padding: 15px 0 15px 250px;
+  background: #aadc6d;
+  border-radius: 20px;
+  overflow: auto;
+  color: #2a422a;
+  font-family: Arial;
+}
+h2 {
+  margin-bottom: 35px;
+}
+h3{
+  margin: 35px 0;
+}
+label{
+  margin: 0 15px 15px 5px;
+}
+.inputValue {
+  max-width: 50px;
+  background: none;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #2a422a;
+  margin: 15px 10px 0;
+  text-align: center;
+  appearance: none;
+  color: red;
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+  }
+}
+select {
+  width: 60px;
+  height: 25px;
+  padding: 0 3px;
+  border-radius: 5px;
+  background: #74ee74;
+  margin-bottom: 15px;
+}
+.button {
+  width: 80px;
+  height: 30px;
+  background: #db9c71;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 10px 5px 0;
+  &:hover{
+    background: #c95000;
+  }
+}
+

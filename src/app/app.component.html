@@ -1,0 +1,33 @@
+<div class="container">
+  <app-editor-top
+    [textAreaValue]="textAreaValue"
+    [styles]="styles"
+    *ngIf="!addBoolean"
+  ></app-editor-top>
+  <app-editor-middle
+    (onEditBoolean)="onEditBoolean($event)"
+    (onStyleBoolean)="onStyleBoolean($event)"
+    [editBoolean]="editBoolean"
+    *ngIf="!addBoolean"
+  ></app-editor-middle>
+  <app-editor-bottom
+    [editBoolean]="editBoolean"
+    [finalEditValue]="finalEditValue"
+    (onSaveChanges)="saveChanges($event)"
+    (onColor)="colorSet($event)"
+    (onBackgroundColor)="backgroundColorSet($event)"
+    (onFontSize)="fontSizeSet($event)"
+    (onFontFamily)="fontFamilySet($event)"
+    (onBoldText)="boldTextSet($event)"
+    (onItalicText)="italicTextSet($event)"
+    (onEddBooleanSet)="addBoolean = !addBoolean"
+    *ngIf="!addBoolean"
+    ></app-editor-bottom>
+  <app-editor-add
+    *ngIf="addBoolean"
+    [newTable]="newTable"
+    (onTableSetValue)="addTable($event)"
+    (onListSetValue)="addList($event)"
+  ></app-editor-add>
+</div>
+

@@ -1,0 +1,39 @@
+<section class="bottomArea">
+  <form action="#" *ngIf="editBoolean">
+    <textarea name="textArea" [(ngModel)]="finalEditValue"></textarea>
+    <input class="button" type="button" value="Save" (click)="saveChanges()">
+    <input class="button" type="button" value="Add" (click)="eddBooleanSet()">
+  </form>
+  <div class="smallContainer" *ngIf="!editBoolean">
+    <form action="#">
+      <span>Text size:</span>
+      <input class="radio" type="radio" name="fontSiZe" id="12px" value="12px" checked (click)="setFontSize($event)">
+      <label for="12px">12px</label>
+      <input class="radio" type="radio" name="fontSiZe" id="14px" value="14px" (click)="setFontSize($event)">
+      <label for="14px">14px</label>
+      <input class="radio" type="radio" name="fontSiZe" id="16px" value="16px" (click)="setFontSize($event)">
+      <label for="16px">16px</label>
+      <input class="radio" type="radio" name="fontSiZe" id="18px" value="18px" (click)="setFontSize($event)">
+      <label for="18px">18px</label>
+      <input class="radio" type="radio" name="fontSiZe" id="20px" value="20px" (click)="setFontSize($event)">
+      <label for="20px">20px</label><br>
+      <span>Font Family:</span>
+      <select class="FontFamily" name="FontFamily" (change)="setFontFamily($event)">
+        <option value="Arial">Arial</option>
+        <option value="Corbel">Corbel</option>
+        <option value="Century">Century</option>
+      </select><br>
+      <input class="button" type="button" value="Color" (click)="colorBoolean = true" [disabled]="colorBoolean">
+      <input class="button" type="button" value="BgColor" (click)="colorBoolean = false" [disabled]="!colorBoolean"><br>
+      <input type="checkbox" id="boldText" [value]="boldTextBoolean ? 'normal' : 'bold'"
+             (change)="boldTextBoolean = !boldTextBoolean;setBoldText($event)">
+      <label for="boldText">Bold text</label>
+      <input type="checkbox" id="italicText" [value]="italicTextBoolean ? 'normal' : 'italic'"
+             (change)="italicTextBoolean = !italicTextBoolean;setItalicText($event)">
+      <label for="italicText">Italic text</label>
+    </form>
+    <app-color-block *ngIf="colorBoolean === true" (onColor)="setColor($event)"></app-color-block>
+    <app-background-color-block *ngIf="colorBoolean === false"
+                                (onBackgroundColor)="setBackgroundColor($event)"></app-background-color-block>
+  </div>
+</section>

@@ -1,0 +1,3 @@
+<div class="colorsBlock" #colorBlock>
+  <div *ngFor="let color of colors" [ngStyle]="{'backgroundColor': color}" (click)="setBackgroundColor($event)"></div>
+</div>

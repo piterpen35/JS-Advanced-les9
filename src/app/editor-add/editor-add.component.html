@@ -1,0 +1,47 @@
+<section class="addBlock">
+  <h2>Choose what to add:</h2>
+  <form action="#">
+    <input type="radio" name="elementAdd" id="table" checked (change)="boolean = true">
+    <label for="table">Table</label>
+    <input type="radio" name="elementAdd" id="list" (change)="boolean = false">
+    <label for="list">List</label>
+  </form>
+  <form action="#" *ngIf="boolean">
+    <span>Input count of row:</span>
+    <input class="inputValue" type="number" name="countRow" [(ngModel)]="newTable.countRow"><br>
+    <span>Input count of cell:</span>
+    <input class="inputValue" type="number" name="countCell" [(ngModel)]="newTable.countCell">
+    <h3>Table style:</h3>
+    <span>Input width of cell:</span>
+    <input class="inputValue" type="text" name="widthCell" [(ngModel)]="newTable.widthCell"><br>
+    <span>Input height of cell:</span>
+    <input class="inputValue" type="text" name="countRow" [(ngModel)]="newTable.heightCell"><br><br>
+    <span>Border width:</span>
+    <input class="inputValue" type="text" name="widthBorder" [(ngModel)]="newTable.widthBorder">
+    <span>Border type:</span>
+    <select name="borderType" [(ngModel)]="newTable.typeBorder">
+      <option value="solid">solid</option>
+      <option value="dashed">dashed</option>
+      <option value="double">double</option>
+    </select>
+    <span>Border color:</span>
+    <select name="borderColor" [(ngModel)]="newTable.colorBorder">
+      <option value="black">black</option>
+      <option value="red">red</option>
+      <option value="blue">blue</option>
+    </select><br>
+    <input class="button" type="button" value="Create" (click)="createTable()">
+  </form>
+  <form action="#" *ngIf="!boolean">
+    <span>Input count of list items:</span>
+    <input style="margin-bottom: 15px" class="inputValue" type="number" name="countListItems" [(ngModel)]="itemsOfListCount"><br>
+    <span>Type of mark:</span>
+    <select name="markType" [(ngModel)]="typeOfMark">
+      <option value="circle">circle</option>
+      <option value="square">square</option>
+      <option value="disc">disc</option>
+    </select><br>
+    <input class="button" type="button" value="Create" (click)="createList()">
+  </form>
+
+</section>
